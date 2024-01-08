@@ -9,7 +9,7 @@
   --clr-white: #fff;
   --ff-primary: "Catamaran", sans-serif;
   --ff-secondary: "Grand Hotel", "cursive";
-  --transition: all 0.3 linear;
+  --transition: all 0.3s linear;
   --spacing: 0.25rem;
   --radius: 0.5rem;
 }
@@ -152,4 +152,68 @@ Header
   outline-offset: 0.25rem;
   font-size: 1.25rem;
   padding: 1rem 1.7rem;
+}
+
+.content-divider {
+  height: 0.5rem;
+  background: linear-gradient(
+    to left,
+    var(--clr-primary),
+    #e9b949 /* var(var(--clr-primary)) */
+  );
+}
+
+/* 
+==================================
+Skills
+==================================
+*/
+
+.skills {
+  background: var(--clr-gray-10);
+}
+
+.skill {
+  padding: 2.5rem 0;
+  text-align: center;
+  transition: var(--transition);
+}
+
+.skill-icon {
+  font-size: 2.5rem;
+  margin-bottom: 1.25rem;
+  display: inline-block;
+  transition: var(--transition);
+  color: var(--clr-primary);
+}
+
+.skill-text {
+  max-width: 60%;
+  color: var(--clr-gray-5);
+  margin: 0 auto;
+}
+.skill:hover {
+  background: var(--clr-white);
+  box-shadow: 0 2px var(--clr-primary);
+}
+
+.skill:hover .skill-icon {
+  transform: translateY(-5px);
+}
+
+@media (min-width: 576px) {
+  .skills {
+    display: flex;
+    flex-wrap: wrap;
+  }
+  .skill {
+    flex-basis: 50%;
+    flex-grow: 1;
+  }
+}
+@media (min-width: 1200px) {
+  .skill {
+    flex-basis: 25%;
+    flex-grow: 1;
+  }
 }
